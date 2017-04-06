@@ -19,12 +19,16 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./output_images/img2.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
+[image2]: ./output_images/img3.png "Undistorted"
+[image3]: ./output_images/img4.png "Undistorted"
+[image4]: ./output_images/img5.png "Undistorted"
+[image5]: ./output_images/img6.png "Undistorted"
+[image6]: ./output_images/img7.png "Undistorted"
+[image7]: ./output_images/img8.png "Undistorted"
+[image8]: ./output_images/img10.png "Undistorted"
+[image9]: ./output_images/img11.png "Undistorted"
+[image10]: ./output_images/img12.png "Undistorted"
+[image11]: ./output_images/img13.png "Undistorted"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -48,12 +52,19 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 ###Pipeline (single images)
 
 ####1. Provide an example of a distortion-corrected image.
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+To demonstrate this step, attached an image with the distortion correction applied:
 ![alt text][image2]
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+I used a combination of channel and gradient thresholds to generate a binary image following the steps recommended in the lesson. The examples of the outputs for each one of this gradientes are:
 
-![alt text][image3]
+![alt text][image4]
+
+![alt text][image5]
+
+![alt text][image6]
+
+![alt text][image7]
+
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
