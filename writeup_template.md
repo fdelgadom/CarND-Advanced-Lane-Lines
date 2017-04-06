@@ -99,7 +99,7 @@ I also tested and alternative pipeline performing the perspective transform as t
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-I followed the code examples in the lesson to fit my lane lines with a 2nd order polynomial using two functions, the first one using sliding windows called ´sliding_window_polyfit´, and a second one ´polyfit()´ to skip the sliding windows step once you know where the lines are.
+I followed the code examples in the lesson to fit my lane lines with a 2nd order polynomial using two functions, the first one using sliding windows called `sliding_window_polyfit()`, and a second one `polyfit()` to skip the sliding windows step once you know where the lines are.
 
 The test result for both functions are:
 
@@ -109,7 +109,7 @@ The test result for both functions are:
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I compute the radius of curvature in my code in using the function ´calc_curvature´, following the code-examples in the lesson. The offset of the position of the vehicle respect to center it is computed as the mean of the values of right and left polynomials in the bottom of the image ´image.shape[0]´, using an auxilary function ´get val()´
+I compute the radius of curvature in my code in using the function `calc_curvature()`, following the code-examples in the lesson. The offset of the position of the vehicle respect to center it is computed as the mean of the values of right and left polynomials in the bottom of the image image.shape[0], using an auxilary function `get val()`
 
 This data is inserted in the resulting image.
 
@@ -137,7 +137,13 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 
 The first results where promising in all zones except to critical ones, whith shadows and changing in the lane markings. To pass this zones I followed the recomendations in the Tips and tricks part of the lesson:
 
-* Use an average of polynomial coefficients detected over last 5 frames, keeping them in global variables ´global_left_fit=[]
-global_right_fit=[]
-* Use a sanity_check function
-* Use `polifyt if sanity_check is OK, and sliding_window_polyfit as the back-up.
+* Use an average of polynomial coefficients detected over last 5 frames, keeping them in global variables `global_left_fit=[]
+global_right_fit=[]`
+* Use a sanity_check function, that we have detected lines and that the lines detected intersects the bottom of the image whithin a reasonable margin, stablished by trial and error in 40 pixels.
+* Use `polifyt()`` if sanity_check is OK, and `sliding_window_polyfit()` as the back-up.
+
+The pipeline will fail in many circunstances, light changes, heavy rain, snow, salt to prevent freezing, lane interruptions or abrupt color changes, other cars blocking the lane...
+
+To improve the pipeline I guess it will be necessary to perform many more experiments with the gradient parameters, introduce color masks and perform contrast adjustment/enhancement on each channel of RGB, HSV and HSL images.
+
+I am not sure si a combination of different algorithms, could provide a solution reliable enough to be deployed in real situations. It will be necessary to investigate the state of the art to confirm that an only-computer-vision solution is feasible.
