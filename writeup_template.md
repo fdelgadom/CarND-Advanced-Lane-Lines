@@ -87,21 +87,35 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][image7]
 
+After that I was prepared to compute what I called the Pipeline stage 1 Lane detection, which resulted in the detection of lane pixels in all the test-images.
+
+As an example here the one correspondint to test6.jpeg
+
+![alt text][image8]
+
+I also tested and alternative pipeline performing the perspective transform as the first step, but the results where poorer than the original function.
+
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-I followed the code examples in the lesson to fit my lane lines with a 2nd order polynomial using two functions, the first one using sliding windows :
+I followed the code examples in the lesson to fit my lane lines with a 2nd order polynomial using two functions, the first one using sliding windows called ´sliding_window_polyfit´, and a second one ´polyfit()´ to skip the sliding windows step once you know where the lines are:
 
-![alt text][image5]
+The test result for both functions are:
+
+![alt text][image9]
+
+![alt text][image10]
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+I compute the radius of curvature in my code in using the function ´calc_curvature´, following the code-examples in the lesson. The offset of the position of the vehicle respect to center it is computed as the mean of the values of right and left polynomials in the bottom of the image ´image.shape[0]´, using an auxilary function ´get val()´
+
+This data is inserted in the resulting image.
 
 ####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+I implemented this step in `draw_output()`   Here is an example of my result on a test image:
 
-![alt text][image6]
+![alt text][image11]
 
 ---
 
