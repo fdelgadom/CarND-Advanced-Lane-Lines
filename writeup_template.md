@@ -99,7 +99,7 @@ I also tested and alternative pipeline performing the perspective transform as t
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-I followed the code examples in the lesson to fit my lane lines with a 2nd order polynomial using two functions, the first one using sliding windows called , and a second one ´polyfit()´ to skip the sliding windows step once you know where the lines are:
+I followed the code examples in the lesson to fit my lane lines with a 2nd order polynomial using two functions, the first one using sliding windows called ´sliding_window_polyfit´, and a second one ´polyfit()´ to skip the sliding windows step once you know where the lines are.
 
 The test result for both functions are:
 
@@ -140,4 +140,4 @@ The first results where promising in all zones except to critical ones, whith sh
 * Use an average of polynomial coefficients detected over last 5 frames, keeping them in global variables ´global_left_fit=[]
 global_right_fit=[]
 * Use a sanity_check function
-* Use `polifyt if sanity_check is OK, and 
+* Use `polifyt if sanity_check is OK, and sliding_window_polyfit as the back-up.
