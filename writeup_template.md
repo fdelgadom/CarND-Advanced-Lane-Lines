@@ -29,6 +29,8 @@ The goals / steps of this project are the following:
 [image9]: ./output_images/img11.png "Undistorted"
 [image10]: ./output_images/img12.png "Undistorted"
 [image11]: ./output_images/img13.png "Undistorted"
+[video1]: ./output_images/uno.mp4 "Undistorted"
+
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -123,7 +125,7 @@ I implemented this step in `draw_output()`   Here is an example of my result on 
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./output_images/uno.mp4)
 
 ---
 
@@ -132,4 +134,5 @@ Here's a [link to my video result](./project_video.mp4)
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+
 
