@@ -89,7 +89,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+I followed the code examples in the lesson to fit my lane lines with a 2nd order polynomial using two functions, the first one using sliding windows :
 
 ![alt text][image5]
 
